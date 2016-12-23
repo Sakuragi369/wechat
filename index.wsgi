@@ -1,4 +1,4 @@
 import sae
-from app_name import wsgi
+from chris_wechat import wsgi
 
 application = sae.create_wsgi_app(wsgi.application)
