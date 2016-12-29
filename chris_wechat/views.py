@@ -9,7 +9,8 @@ from wechat_sdk.exceptions import ParseError
 from wechat_sdk.messages import TextMessage
 import json
 import logging
-from .backend import constellation_dict
+from .backend import constellation_dict, STORY
+import random
 
 W_TOKEN = "chrisjiao"
 AppID = "wx3caa80ff176f212e"
@@ -67,16 +68,15 @@ def index(request):
                 data['data']['forecast'][0]['type']
             )
         elif content == '讲故事':
-            reply_text = (
-                '儿子中考考试考差了，被老婆骂了一顿。\n''我去安慰儿子：“你要努力学习，以后一定要超越爸爸。”\n''儿子愣了一下，弱弱来了一句：“别的我不敢保证。但是，以后找个比你好的老婆还是很有把握的。”‍\n')
+
+            num = random.randint(1, 8)
+            story = STORY.get(num)
+            reply_text = story
         elif content in constellation_dict.keys():
             constellation_en = constellation_dict.get(content, None)
-            if not constellation_en:
-                reply_text = "Sorry, I can't understand."
             constellation_url = 'http://app.data.qq.com/?umod=astro&act=astro&jsonp=1&func=TodatTpl&t=4&a=%s' % constellation_en
             response = requests.get(constellation_url)
             data = json.loads(response.content.encode("utf-8").decode('unicode_escape')[9:][:-2])
-            astro = data.get("astro")
             reply_text = ""
             for row in data.get("fortune"):
                 _type = row.get("type")
