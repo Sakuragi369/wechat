@@ -8,6 +8,7 @@ from wechat_sdk import WechatBasic
 from wechat_sdk.exceptions import ParseError
 from wechat_sdk.messages import TextMessage
 import json
+import logging
 
 
 W_TOKEN = "chrisjiao"
@@ -32,14 +33,14 @@ def index(request):
             return HttpResponseBadRequest("Verify Faild")
 
         return HttpResponse(request.GET.get('echostr', ''), content_type="text/plain")
-
+    logging.getLogger("chris_wechat").info("POST")
     try:
         wechat_instance.parse_data(data=request.body)
     except ParseError:
         return HttpResponseBadRequest("Invalid XML Data")
 
     message = wechat_instance.get_message()
-
+    logging.getLogger("chris_wechat").info(message)
     response = wechat_instance.response_text(
         content=(
             '感谢您的关注！\n回复【功能】两个字查看支持的功能，还可以回复任意内容开始聊天'
@@ -47,7 +48,7 @@ def index(request):
     if isinstance(message, TextMessage):
         # 当前会话内容
         content = message.content.strip()
-        print content
+        logging.getLogger("chris_wechat").info(content)
         if content == '功能':
             reply_text = (
                 '回复任意词语，查天气，陪聊天，讲故事，无所不能！\n'

@@ -87,15 +87,15 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -107,3 +107,41 @@ STATIC_URL = '/static/'
 W_TOKEN = "chrisjiao"
 AppID = "wx3caa80ff176f212e"
 AppSecret = "e8281f1a5f854b560aed83e896c649a6"
+
+
+LOG_PATH = os.path.join(BASE_DIR, 'logs')
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '[%(asctime)s] [%(levelname)s]  [%(name)s::%(lineno)d] >>>>func: %(funcName)s : %(message)s'
+        },
+    },
+    'filters': {
+    },
+    'handlers': {
+        'default': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_PATH, 'wechat.log'),
+            'maxBytes': 1024 * 1024 * 100,  # 100 MB
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['default', 'console'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+    }
+}
