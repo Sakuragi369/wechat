@@ -104,6 +104,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-WeChat_TOKEN = "chrisjiao"
-AppID = " "
-AppSecret = ""
+W_TOKEN = "chrisjiao"
+AppID = "wx3caa80ff176f212e"
+AppSecret = "e8281f1a5f854b560aed83e896c649a6"

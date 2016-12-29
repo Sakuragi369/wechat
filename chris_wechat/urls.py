@@ -6,9 +6,9 @@
 
 @time: 2016/12/23 15:45
 """
-from django.conf.urls import include, url
-from .views import WeChat
+from django.conf.urls import url
+from chris_wechat import views
 
 urlpatterns = [
-    url(r'^$/', WeChat.as_view),
+    url(r'^$', views.index),
 ]
