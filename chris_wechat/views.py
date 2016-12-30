@@ -9,9 +9,9 @@ from wechat_sdk.exceptions import ParseError
 from wechat_sdk.messages import TextMessage
 import json
 import logging
-from .backend import constellation_dict, STORY
-import random
+from .backend import constellation_dict
 from story.views import get_story
+from third.weather import get_current_weather
 
 W_TOKEN = "chrisjiao"
 AppID = "wx3caa80ff176f212e"
@@ -58,20 +58,11 @@ def index(request):
             )
         elif content.endswith('天气'):
             city = content[:-2]
-            weather_url = 'http://wthrcdn.etouch.cn/weather_mini?city=' + city
-            logging.getLogger(__name__).info(weather_url)
-            response = requests.get(weather_url)
-            data = json.loads(response.content)
+            logging.getLogger(__name__).info("###" + city)
+            reply_text = get_current_weather(city)
 
-            reply_text = (
-                data['data']['forecast'][0]['high'] + '\n' +
-                data['data']['forecast'][0]['high'] + '\n' +
-                data['data']['forecast'][0]['type']
-            )
         elif content == '讲故事':
             story = get_story()
-            # num = random.randint(1, 8)
-            # story = STORY.get(num)
             reply_text = story
 
         elif content in constellation_dict.keys():
