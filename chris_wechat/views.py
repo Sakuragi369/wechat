@@ -12,6 +12,7 @@ import logging
 from .backend import constellation_dict
 from story.views import get_story
 from third.weather import get_current_weather
+from third.music import get_music
 
 W_TOKEN = "chrisjiao"
 AppID = "wx3caa80ff176f212e"
@@ -75,6 +76,12 @@ def index(request):
                 _type = row.get("type")
                 _content = row.get("content")
                 reply_text += _type + ": " + _content + '\n'
+
+        elif content.startwith('音乐'):
+            message = content[2:]
+            music_url, title, description, _, _ = get_music(message)
+            response = wechat_instance.response_music(music_url, title, description)
+            return HttpResponse(response, content_type="application/xml")
 
         else:
             reply_text = '啦啦啦啦啦啦啦'
