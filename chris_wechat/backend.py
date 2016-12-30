@@ -7,18 +7,18 @@
 @time: 2016/12/29 16:18
 """
 constellation_dict = {
-    "狮子座": "Leo",
-    "双子座": "Gemini",
-    "金牛座": "Taurus",
-    "白羊座": "Aries",
-    "巨蟹座": "Cancer",
-    "处女座": "Virgo",
-    "天秤座": "Libra",
-    "天蝎座": "Scorpio",
-    "射手座": "Sagittarius",
-    "摩羯座": "Capricorn",
-    "水瓶座": "Aquarius",
-    "双鱼座": "Pisces",
+    u"狮子座": "Leo",
+    u"双子座": "Gemini",
+    u"金牛座": "Taurus",
+    u"白羊座": "Aries",
+    u"巨蟹座": "Cancer",
+    u"处女座": "Virgo",
+    u"天秤座": "Libra",
+    u"天蝎座": "Scorpio",
+    u"射手座": "Sagittarius",
+    u"摩羯座": "Capricorn",
+    u"水瓶座": "Aquarius",
+    u"双鱼座": "Pisces",
 }
 
 # 故事集合

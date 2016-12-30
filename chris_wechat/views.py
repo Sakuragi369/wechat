@@ -11,6 +11,7 @@ import json
 import logging
 from .backend import constellation_dict, STORY
 import random
+from story.views import get_story
 
 W_TOKEN = "chrisjiao"
 AppID = "wx3caa80ff176f212e"
@@ -68,12 +69,13 @@ def index(request):
                 data['data']['forecast'][0]['type']
             )
         elif content == '讲故事':
-
-            num = random.randint(1, 8)
-            story = STORY.get(num)
+            story = get_story()
+            # num = random.randint(1, 8)
+            # story = STORY.get(num)
             reply_text = story
+
         elif content in constellation_dict.keys():
-            constellation_en = constellation_dict.get(content, None)
+            constellation_en = constellation_dict.get(content, None).lower()
             constellation_url = 'http://app.data.qq.com/?umod=astro&act=astro&jsonp=1&func=TodatTpl&t=4&a=%s' % constellation_en
             response = requests.get(constellation_url)
             data = json.loads(response.content.encode("utf-8").decode('unicode_escape')[9:][:-2])

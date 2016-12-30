@@ -1,0 +1,19 @@
+[2016-12-30 10:29:03,015] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /
+[2016-12-30 10:29:03,380] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /favicon.ico
+[2016-12-30 10:52:45,805] [ERROR]  [django.request::256] >>>>func: handle_uncaught_exception : Internal Server Error: /aaaa/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_story() takes no arguments (1 given)
+[2016-12-30 10:53:04,243] [ERROR]  [django.request::256] >>>>func: handle_uncaught_exception : Internal Server Error: /aaaa/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_story() takes no arguments (1 given)
+[2016-12-30 10:53:44,584] [ERROR]  [django.request::256] >>>>func: handle_uncaught_exception : Internal Server Error: /aaaa/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'unicode' object has no attribute 'get'
