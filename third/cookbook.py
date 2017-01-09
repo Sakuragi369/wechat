@@ -13,7 +13,7 @@ import json
 logger = logging.getLogger(__name__)
 
 
-def search_menu(key=u'西红柿炒鸡蛋'):
+def search_menu(key=u'红烧肉'):
     menu_url = "http://www.tngou.net/api/cook/name?name=%s" % key
     response = requests.get(menu_url)
     data = json.loads(response.content)
@@ -24,17 +24,17 @@ def search_menu(key=u'西红柿炒鸡蛋'):
             max_count = 0
             max_data = {}
             if row["count"] > max_count:
+                max_count = row["count"]
                 max_data = row
 
-        name = max_data.name
-        description = max_data.description
-        food = max_data.food
-        img_url = "http://tnfs.tngou.net/image" + max_data.img
-        message = max_data.message
+        name = max_data.get("name")
+        description = max_data.get("description")
+        food = max_data.get("ood")
+        img_url = "http://tnfs.tngou.net/image" + max_data.get("img")
+        message = max_data.get("message")
 
         reply_text = message
     except Exception as e:
         logger.exception(e)
         reply_text = '抱歉没有找到,赖我喽'
     return reply_text
-
