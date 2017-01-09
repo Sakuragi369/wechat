@@ -13,6 +13,7 @@ from .backend import constellation_dict
 from story.views import get_story
 from third.weather import get_current_weather
 from third.music import get_music
+from third.cookbook import search_menu
 
 W_TOKEN = "chrisjiao"
 AppID = "wx3caa80ff176f212e"
@@ -77,12 +78,15 @@ def index(request):
                 _content = row.get("content")
                 reply_text += _type + ": " + _content + '\n'
 
-        elif content.startwith('音乐'):
+        elif content.startswith('音乐'):
             message = content[2:]
             music_url, title, description, _, _ = get_music(message)
             response = wechat_instance.response_music(music_url, title, description)
             return HttpResponse(response, content_type="application/xml")
 
+        elif content.endswith("菜谱"):
+            message = content[:2]
+            reply_text = search_menu(message)
         else:
             reply_text = '啦啦啦啦啦啦啦'
         response = wechat_instance.response_text(content=reply_text)
