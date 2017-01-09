@@ -144,16 +144,29 @@ LOGGING = {
             'formatter': 'standard',
         },
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'standard'
+        },
+        'third': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_PATH, 'third.log'),
+            'maxBytes': 1024 * 1024 * 100,  # 100 MB
+            'backupCount': 5,
+            'formatter': 'standard',
         },
     },
     'loggers': {
         'django': {
             'handlers': ['default', 'console'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False
+        },
+        'third': {
+            'handlers': ['third', 'console', ],
+            'level': 'INFO',
+            'propagate': True
         },
     }
 }

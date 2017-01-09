@@ -4,6 +4,7 @@
     <list default="true" id="6ddcc4af-1d71-422f-8019-2cf3d4402aa1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/third/cookbook.py" afterPath="$PROJECT_DIR$/third/cookbook.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat/settings.py" afterPath="$PROJECT_DIR$/wechat/settings.py" />
     </list>
     <ignored path="wechat0711.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +23,7 @@
     <SUITE FILE_PATH="coverage/wechat$music.coverage" NAME="music Coverage Results" MODIFIED="1483093029430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/third" />
     <SUITE FILE_PATH="coverage/wechat$popular.coverage" NAME="popular Coverage Results" MODIFIED="1483944103770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/third" />
     <SUITE FILE_PATH="coverage/wechat$weather.coverage" NAME="weather Coverage Results" MODIFIED="1483934142291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/third" />
-    <SUITE FILE_PATH="coverage/wechat$cookbook.coverage" NAME="cookbook Coverage Results" MODIFIED="1483945035594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/third" />
+    <SUITE FILE_PATH="coverage/wechat$cookbook.coverage" NAME="cookbook Coverage Results" MODIFIED="1483945908589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/third" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -51,8 +52,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chris_wechat/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="-203">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -63,8 +64,8 @@
       <file leaf-file-name="cookbook.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/third/cookbook.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="425">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding>
                 <element signature="e#89#103#0" expanded="true" />
               </folding>
@@ -131,8 +132,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2091">
-              <caret line="123" column="41" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
+            <state relative-caret-position="596">
+              <caret line="146" column="28" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -159,13 +160,13 @@
         <option value="$PROJECT_DIR$/story/models.py" />
         <option value="$PROJECT_DIR$/story/admin.py" />
         <option value="$PROJECT_DIR$/wechat/urls.py" />
-        <option value="$PROJECT_DIR$/wechat/settings.py" />
         <option value="$PROJECT_DIR$/chris_wechat/backend.py" />
         <option value="$PROJECT_DIR$/story/views.py" />
         <option value="$PROJECT_DIR$/third/music.py" />
         <option value="$PROJECT_DIR$/third/popular.py" />
         <option value="$PROJECT_DIR$/third/weather.py" />
         <option value="$PROJECT_DIR$/chris_wechat/views.py" />
+        <option value="$PROJECT_DIR$/wechat/settings.py" />
         <option value="$PROJECT_DIR$/third/cookbook.py" />
       </list>
     </option>
@@ -669,7 +670,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483944399498</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加菜谱功能">
+      <created>1483945335616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1483945335616</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1037,14 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="41" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/story/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1101,18 +1101,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chris_wechat/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="-203">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wechat/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="146" column="28" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/third/cookbook.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="425">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding>
             <element signature="e#89#103#0" expanded="true" />
           </folding>

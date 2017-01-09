@@ -29,7 +29,7 @@ def search_menu(key=u'红烧肉'):
 
         name = max_data.get("name")
         description = max_data.get("description")
-        food = max_data.get("ood")
+        food = max_data.get("food")
         img_url = "http://tnfs.tngou.net/image" + max_data.get("img")
         message = max_data.get("message")
 
