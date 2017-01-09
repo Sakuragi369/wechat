@@ -10,7 +10,7 @@ import logging
 import requests
 import json
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("third")
 
 
 def search_menu(key=u'红烧肉'):
@@ -35,6 +35,6 @@ def search_menu(key=u'红烧肉'):
 
         reply_text = message
     except Exception as e:
-        logger.exception(e)
+        logging.getLogger('third').exception(e)
         reply_text = '抱歉没有找到,赖我喽'
     return reply_text

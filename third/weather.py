@@ -14,7 +14,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('third')
 
 
 def get_current_weather(city=u'北京'):
