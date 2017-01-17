@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 import requests
 from django.http.response import HttpResponse, HttpResponseBadRequest
+from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 from wechat_sdk import WechatBasic
 from wechat_sdk.exceptions import ParseError
@@ -14,6 +15,7 @@ from story.views import get_story
 from third.weather import get_current_weather
 from third.music import get_music
 from third.cookbook import search_menu
+from django.shortcuts import render_to_response
 
 W_TOKEN = "chrisjiao"
 AppID = "wxee6d521fd05990a6"
@@ -137,4 +139,9 @@ def create_menu():
         wechat_instance.create_menu(menu_data)
     except Exception as ex:
         logging.getLogger('wechat').exception(ex)
+
+
+def test(request):
+    return render_to_response('meifanwang_index.html', {}, RequestContext(request))
+
 

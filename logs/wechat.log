@@ -17,3 +17,14 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 31, in process_response
     if response.get('X-Frame-Options', None) is not None:
 AttributeError: 'unicode' object has no attribute 'get'
+[2017-01-17 18:03:44,693] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/
+[2017-01-17 18:03:55,055] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/
+[2017-01-17 18:04:06,059] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/
+[2017-01-17 18:04:17,055] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/
+[2017-01-17 18:04:28,058] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/
+[2017-01-17 18:04:39,073] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/
+[2017-01-17 18:05:01,816] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/
+[2017-01-17 18:05:03,108] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /css/bootstrap-3.3.5/css/bootstrap.min.css
+[2017-01-17 18:05:03,131] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /css/api.css
+[2017-01-17 18:05:03,134] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /script/lib/jquery-1.11.3.min.js
+[2017-01-17 18:05:12,171] [WARNING]  [django.request::170] >>>>func: get_response : Not Found: /zh-cn/cloud/json/mytasks/

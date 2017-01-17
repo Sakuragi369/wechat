@@ -18,4 +18,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^wechat/', include('chris_wechat.urls')),
+    url(r'^test/', 'chris_wechat.views.test'),
+
 ]
