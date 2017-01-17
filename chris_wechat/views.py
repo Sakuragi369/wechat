@@ -16,8 +16,8 @@ from third.music import get_music
 from third.cookbook import search_menu
 
 W_TOKEN = "chrisjiao"
-AppID = "wx3caa80ff176f212e"
-AppSecret = "e8281f1a5f854b560aed83e896c649a6"
+AppID = "wxee6d521fd05990a6"
+AppSecret = "17970d890b73fe69a479a8bea49e3841"
 
 wechat_instance = WechatBasic(
     token=W_TOKEN,
@@ -49,6 +49,42 @@ def index(request):
         content=(
             '感谢您的关注！\n回复【功能】两个字查看支持的功能，还可以回复任意内容开始聊天'
         ))
+    menu_data = {
+        'button': [
+            {
+                'type': 'click',
+                'name': '今日歌曲',
+                'key': 'V1001_TODAY_MUSIC'
+            },
+            {
+                'type': 'click',
+                'name': '歌手简介',
+                'key': 'V1001_TODAY_SINGER'
+            },
+            {
+                'name': '菜单',
+                'sub_button': [
+                    {
+                        'type': 'view',
+                        'name': '搜索',
+                        'url': 'http://www.soso.com/'
+                    },
+                    {
+                        'type': 'view',
+                        'name': '视频',
+                        'url': 'http://v.qq.com/'
+                    },
+                    {
+                        'type': 'click',
+                        'name': '赞一下我们',
+                        'key': 'V1001_GOOD'
+                    }
+                ]
+            }
+        ]
+    }
+    wechat_instance.create_menu(menu_data)
+
     if isinstance(message, TextMessage):
         # 当前会话内容
         content = message.content.strip()
@@ -85,8 +121,11 @@ def index(request):
             return HttpResponse(response, content_type="application/xml")
 
         elif content.endswith("菜谱"):
-            message = content[:2]
+            message = content[:-2]
             reply_text = search_menu(message)
+            response = wechat_instance.response_news(reply_text)
+
+            return HttpResponse(response, content_type="application/xml")
         else:
             reply_text = '啦啦啦啦啦啦啦'
         response = wechat_instance.response_text(content=reply_text)
